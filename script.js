@@ -106,14 +106,6 @@ function updateStatus(jobId, newStatus) {
 }
 
 
-// Tab Button
-document.querySelectorAll('#tab-container button').forEach(button => {
-    button.addEventListener('click', function() {
-        document.querySelectorAll('#tab-container button').forEach(btn => btn.classList.remove('btn-active-tab'));
-        this.classList.add('btn-active-tab');
-        handleTabFilter(this.innerText);
-    });
-});
 
 
 //  main function
@@ -170,6 +162,16 @@ function renderJobs(jobsToRender) {
 
     jobsCountEl.innerText = jobsToRender.length;
 }
+
+// Tab Button
+document.querySelectorAll('#tab-container button').forEach(button => {
+    button.addEventListener('click', function() {
+        document.querySelectorAll('#tab-container button').forEach(btn => btn.classList.remove('btn-active-tab'));
+        this.classList.add('btn-active-tab');
+        handleTabFilter(this.innerText);
+    });
+});
+
 
 
 // Initial run
