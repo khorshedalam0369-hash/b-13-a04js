@@ -107,6 +107,17 @@ function updateStatus(jobId, newStatus) {
 
 
 
+// Filter logic
+function handleTabFilter(tabText) {
+    if (tabText === "All") {
+        renderJobs(jobs);
+    } else if (tabText === "Interview") {
+        renderJobs(jobs.filter(job => job.status === "INTERVIEW"));
+    } else if (tabText === "Rejected") {
+        renderJobs(jobs.filter(job => job.status === "REJECTED"));
+    }
+}
+
 
 //  main function
 function renderJobs(jobsToRender) {
