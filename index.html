@@ -9,11 +9,90 @@
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
     
-   
+   <style>
+        @import url('https://fonts.cdnfonts.com/css/geist');
+
+        body {
+            font-family: 'Geist', sans-serif;
+            background-color: #f8fafc;
+            color: #323b49;
+        }
+
+        .container-custom {
+            max-width: 1110px;
+            margin: 0 auto;
+        }
+
+        .heading-color { color: #002c5c; }
+        
+        .total-gradient {
+            background: linear-gradient(to bottom, #002b70 0%, );
+             }
+
+        .interview-color { color: #10b981; }
+        .rejected-color { color: #ef4444; }
+
+        .btn-active-tab {
+            background-color: #3b82f6 !important;
+            color: white !important;
+            font-weight: 600;
+        }
+    </style>
     
 </head>
 
 <body>
-  
+  <main class="container-custom py-10 px-4">
+        
+        <header class="mb-8">
+            <h1 class="text-2xl md:text-[32px] font-bold heading-color text-center md:text-left whitespace-nowrap">
+                Job Application Tracker
+            </h1>
+        </header>
+
+        <section class="grid grid-cols-3 gap-2 md:gap-4 mb-10">
+            <div class="bg-white border border-[#f1f2f4] p-3 md:p-6 rounded-lg shadow-sm text-center">
+                <p class="text-[10px] md:text-sm font-medium text-[#323b49]">Total</p>
+                <h2 id="total-count" class="text-lg md:text-2xl font-bold total-gradient">8</h2>
+            </div>
+            
+            <div class="bg-white border border-[#f1f2f4] p-3 md:p-6 rounded-lg shadow-sm text-center">
+                <p class="text-[10px] md:text-sm font-medium text-[#323b49]">Interview</p>
+                <h2 id="interview-count" class="text-lg md:text-2xl font-bold interview-color">0</h2>
+            </div>
+            
+            <div class="bg-white border border-[#f1f2f4] p-3 md:p-6 rounded-lg shadow-sm text-center">
+                <p class="text-[10px] md:text-sm font-medium text-[#323b49]">Rejected</p>
+                <h2 id="rejected-count" class="text-lg md:text-2xl font-bold rejected-color">0</h2>
+            </div>
+        </section>
+
+         <hr class="border-[#e6e7e9] mb-5">
+
+        <section>
+            <div class="flex justify-between items-center mb-6">
+                <h3 class="text-xl font-semibold heading-color">Available Jobs</h3>
+                <p class="text-base font-medium text-[#64748b]"><span id="jobs-count">0</span> jobs</p>
+            </div>
+
+            <div class="flex gap-2 mb-8" id="tab-container">
+                <button class="btn btn-sm bg-white border-[#f1f2f4] text-[#64748b] text-xs font-medium w-20 h-8 btn-active-tab">All</button>
+                <button class="btn btn-sm bg-white border-[#f1f2f4] text-[#64748b] text-xs font-medium w-20 h-8">Interview</button>
+                <button class="btn btn-sm bg-white border-[#f1f2f4] text-[#64748b] text-xs font-medium w-20 h-8">Rejected</button>
+            </div>
+
+            <div id="jobs-list" class="space-y-4">
+                
+                <div id="no-jobs" class="flex flex-col items-center justify-center bg-white border border-[#f1f2f4] rounded-lg p-20 text-center">
+                    <img src="./assets/jobs.png" alt="No jobs" class="mb-4">
+                    <h4 class="text-2xl font-semibold heading-color mb-2">No jobs available</h4>
+                    <p class="text-[#64748b]">Check back soon for new job opportunities</p>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    
 </body>
 </html>
